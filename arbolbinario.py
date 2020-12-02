@@ -1,7 +1,7 @@
 import os
 import time
 
-segundos = 2
+segundos = 0.8
 
 class node():
     def __init__(self, dato):
@@ -63,49 +63,55 @@ class arbol():
 tree = arbol()
 
 while True:
-    os.system("clear")
-    print("Arbol Mike")
-    opc = input("\n1.-Insertar nodo \n2.-Inorden \n3.-Preorden \n4.-Postorden \n5.-Buscar \n6.-Salir \n\nElige una opcion -> ")
-     
+    try: 
+        os.system("clear")
+        print("Arbol Mike")
+        opc = input("\n1.-Insertar nodo \n2.-Inorden \n3.-Preorden \n4.-Postorden \n5.-Buscar \n6.-Salir \n\nElige una opcion -> ")
+    
+    except ValueError:
+        print("\nIngresa solo digitos...")
+        time.sleep(segundos)
+
     if opc == '1':
-        nodo = input("\nIngresa el nodo -> ")
-        if nodo.isdigit():
+        try:
+            nodo = input("\nIngresa el nodo -> ")
             nodo = int(nodo)
             tree.root = tree.insert(tree.root, nodo)
-        else:
+            
+        except ValueError:
             print("\nIngresa solo digitos...")
+
     elif opc == '2':
         if tree.root == None:
             print("Vacio")
         else:
             tree.inorder(tree.root)
+
     elif opc == '3':
         if tree.root == None:
             print("Vacio")
         else:
             tree.preorder(tree.root)
+
     elif opc == '4':
         if tree.root == None:
             print("Vacio")
         else:
+
             tree.postorder(tree.root)
     elif opc == '5':
-        nodo = input("\nIngresa el nodo a buscar -> ")
-        if nodo.isdigit():
+        try:
+            nodo = int(input("\nIngresa el nodo a buscar -> "))
             nodo = int(nodo)
             if tree.buscar(nodo, tree.root) == None:
                 print("\nNodo no encontrado...")
             else:
                 print("\nNodo encontrado -> ",tree.buscar(nodo, tree.root), " si existe...")
-        else:
-            print("\nIngresa solo digitos...")        
+        except ValueError:
+            print("\nIngresa solo digitos...") 
+
     elif opc == '6':
         print("\nElegiste salir...\n")
         time.sleep(segundos)
         break
-    else:
-        print("\nElige una opcion correcta...")
-    print()
     time.sleep(segundos)
-
-print()
