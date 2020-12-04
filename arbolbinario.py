@@ -66,7 +66,7 @@ while True:
     os.system("clear")
     print("Arbol Mike")
     opc = input("\n1.-Insertar nodo \n2.-Inorden \n3.-Preorden \n4.-Postorden \n5.-Buscar \n6.-Salir \n\nElige una opcion -> ")
-     
+
     if opc == '1':
         nodo = input("\nIngresa el nodo -> ")
         if nodo.isdigit():

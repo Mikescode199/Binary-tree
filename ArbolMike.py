@@ -1,21 +1,13 @@
 numeros = [3,5,8,8,4,6,4,6,8,36]
+letras = ['A','H','J','C','B']
 
-class Node(): 
-    def __init__(self,key): 
-        self.left = None
-        self.right = None
-        self.val = key 
+class Tree(): 
+    def inOrder(self, Lista_ordenar):
+        self.Lista_ordenar = Lista_ordenar
+        print(sorted(Lista_ordenar))
+        
+t = Tree()
+t.inOrder(letras)
+t.inOrder(numeros)
 
 
-def printInorder(root): 
-    if root: 
-        printInorder(root.left) 
-        print(root.val),
-        printInorder(root.right) 
-
-root = Node(1) 
-root.left      = Node(2) 
-root.right     = Node(3) 
-root.left.left  = Node(4) 
-root.left.right  = Node(5) 
-printInorder(root) 
