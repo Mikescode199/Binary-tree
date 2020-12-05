@@ -63,20 +63,9 @@ class arbol():
 tree = arbol()
 
 while True:
-<<<<<<< HEAD
     os.system("clear")
     print("Arbol Mike")
     opc = input("\n1.-Insertar nodo \n2.-Inorden \n3.-Preorden \n4.-Postorden \n5.-Buscar \n6.-Salir \n\nElige una opcion -> ")
-=======
-    try: 
-        os.system("clear")
-        print("Arbol Mike")
-        opc = input("\n1.-Insertar nodo \n2.-Inorden \n3.-Preorden \n4.-Postorden \n5.-Buscar \n6.-Salir \n\nElige una opcion -> ")
-    
-    except ValueError:
-        print("\nIngresa solo digitos...")
-        time.sleep(segundos)
->>>>>>> 9a9cd99cb3d30b151ed801cf602cfafb25d0cfb5
 
     if opc == '1':
         try:
@@ -85,7 +74,7 @@ while True:
             tree.root = tree.insert(tree.root, nodo)
             
         except ValueError:
-            print("\nIngresa solo digitos...")
+            print("\nIngresa solo digitos bro")
 
     elif opc == '2':
         if tree.root == None:
@@ -107,17 +96,17 @@ while True:
             tree.postorder(tree.root)
     elif opc == '5':
         try:
-            nodo = int(input("\nIngresa el nodo a buscar -> "))
+            nodo = int(input("\n Ingresa el nodo a buscar -> "))
             nodo = int(nodo)
             if tree.buscar(nodo, tree.root) == None:
                 print("\nNodo no encontrado...")
             else:
-                print("\nNodo encontrado -> ",tree.buscar(nodo, tree.root), " si existe...")
+                print("\n Encontrado -> ",tree.buscar(nodo, tree.root), " si existe")
         except ValueError:
-            print("\nIngresa solo digitos...") 
+            print("\n Ingresa solo digitos bro ") 
 
     elif opc == '6':
-        print("\nElegiste salir...\n")
+        print("\n Bye \n")
         time.sleep(segundos)
         break
     time.sleep(segundos)
