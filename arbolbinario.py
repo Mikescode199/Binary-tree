@@ -59,6 +59,7 @@ class arbol():
                     return self.buscar(dato, a.left)
                 else:
                     return self.buscar(dato, a.right)
+                
 
 tree = arbol()
 
@@ -101,7 +102,7 @@ while True:
             if tree.buscar(nodo, tree.root) == None:
                 print("\nNodo no encontrado...")
             else:
-                print("\n Encontrado -> ",tree.buscar(nodo, tree.root), " si existe")
+                print("\n Encontrado -> ",tree.buscar(nodo, tree.root), 'Mi padre es: ', tree.preorder(nodo) )
         except ValueError:
             print("\n Ingresa solo digitos bro ") 
 
